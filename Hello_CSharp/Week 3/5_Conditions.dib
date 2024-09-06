@@ -1,0 +1,195 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Conditions
+
+#!markdown
+
+A computer program needs to be able to handle conditions so that the code can branch in multiple directions based on some logical checks.
+
+An `if() {;} else {;}` is the most common logical condition check nut there are others. Examine the following code and try to work out what will be printed out to the console, then run the code.   
+
+#!csharp
+
+using System;
+// when using an if statement,  a code block in curly brackets {} (or braces) will only run if the condition is true
+// the value in the parentheses () is called a condition and it must either be evaluated to true or false
+
+// First code block
+if(true) {
+    Console.WriteLine("The first code block will run because the condition is true");
+}
+// Second code block
+if (false) {
+    Console.WriteLine("The second block will not run because the condition is false");
+}
+
+#!markdown
+
+The `while` keyword is another way to implement a condition. A game will often use `while(true) {// game code here}` to create a game loop than runs forever unless someone exits the game. We can also use a boolean variable `gameRunning` which if false in the code below will enable the game to stop.
+
+In the example below, we see another example of `if () {;} else {;}` condition.
+
+#!csharp
+
+bool gameRunning = true;
+int counter = 0;
+int countMax = 100;
+// this will run forever while the condition is true
+while(gameRunning) {
+    Console.WriteLine("This will run forever because the condition is always true");
+    // added a counter to break the loop so it doesn't run forever and crash the notebook
+    if (counter < 100) counter++;  // Increment the counter by 1 each loop until the counter hits 100. This is the same as counter = counter + 1
+    else gameRunning = false;
+}
+Console.WriteLine("\nThank goodness that someone put a break statement in there!");
+
+#!markdown
+
+We can also implement a `do {;} while ();` conditional loop if we want to make the condition check at the end of the first code loop.
+
+#!csharp
+
+do {
+    Console.WriteLine("This will run at least once because the condition is checked after the code block");
+} while (false);
+
+#!markdown
+
+For fun we show another value condition check. As `(true == false)` is always false then the while loop still only runs once - i.e. `(true == false)` is `false`. As said above, it is important that the value in a logical condition check evalutes to either true or false. This is why the equivalence operator `==` is used here.
+
+#!csharp
+
+do {
+    Console.WriteLine("This will run at least once because the condition is checked after the code block");
+}  while (true == false);
+
+#!markdown
+
+We can also check for text equivalences.
+
+#!csharp
+
+string myName = "Thor";
+
+if (myName == "Thor") {
+    Console.WriteLine("I am the mightly Thor!");
+} else {
+    Console.WriteLine("I am a feeble human!");
+}
+
+#!markdown
+
+We can also have the following logic
+
+``` C#
+if (condition) { // do something ; }
+else if (another_condition) { // do another thing ; }
+else { // if all fails to this ; }
+``` 
+Add an `if else` condtion to the code above to check for another super hero!
+
+#!markdown
+
+Let's introduce a new keyword `enum` that we can use in another type of condition `switch(variable) { case value_1 : break; case value_2: break;}`
+An `enum` defines a variable that can hold a set of predefined constants, e.g. `enum Level {Low, Medium, High}`. A `switch` statement is better to use than `if else if` if there are many conditions to check. See the days of the week example below.
+
+#!csharp
+
+// Define the enum for days of the week
+enum DayOfWeek
+{
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday
+}
+
+DayOfWeek today = (DayOfWeek)DateTime.Now.DayOfWeek; // get todays day of the week
+
+// Print a fun message based on the day of the week
+PrintFunMessage(today);
+
+void PrintFunMessage(DayOfWeek day)
+{
+    switch (day)
+    {
+        case DayOfWeek.Sunday:
+            Console.WriteLine("Sunday: Time to relax and enjoy!");
+            break;
+        case DayOfWeek.Monday:
+            Console.WriteLine("Monday: Let's start the week with energy!");
+            break;
+        case DayOfWeek.Tuesday:
+            Console.WriteLine("Tuesday: Keep going, you're doing great!");
+            break;
+        case DayOfWeek.Wednesday:
+            Console.WriteLine("Wednesday: Halfway through the week!");
+            break;
+        case DayOfWeek.Thursday:
+            Console.WriteLine("Thursday: Almost there, keep pushing!");
+            break;
+        case DayOfWeek.Friday:
+            Console.WriteLine("Friday: The weekend is just around the corner!");
+            break;
+        case DayOfWeek.Saturday:
+            Console.WriteLine("Saturday: Enjoy your weekend to the fullest!");
+            break;
+        default:
+            Console.WriteLine("Unknown day: Have a great day regardless!");
+            break;
+    }
+}
+
+#!markdown
+
+**Exercise**: 
+
+Try to complete the following code to print out whether it is currently morning, afternoon, evening, or night time
+
+1. Complete the enum for TimeOfDay - paying attention to teh comment! 
+2. Complete the logic for calculating the time of day. Note that an if ... else if is most suitabale here
+   
+``` C#
+if (condition) set timeofday
+else if (anothercondition) set othertimeofday
+else if (yetanothercondition) set yetothertimeofday
+else set variable to Night 
+```
+
+#!csharp
+
+using System;
+
+// Define enum for time of day 
+enum TimeOfDay
+{
+    // Define the values for the enum: Morning, Afternoon, Evening, Night
+    Morning,
+    // more values here
+}
+
+// Get the current hour from a standard system function in C#
+int hour = DateTime.Now.Hour;
+Console.WriteLine("The current hour of the day in the 24 hr clock is " + hour);
+// Declare a variable to store the time of day and set the default to morning
+TimeOfDay timeOfDay = TimeOfDay.Morning;
+
+
+// if hour is greater than or equal to 5 and less than 12, it's morning
+if (hour >= 5 && hour < 12) timeOfDay = TimeOfDay.Morning;
+// if hour is greater than or equal to 12 and less than 17, it's afternoon
+
+// if hour is greater than or equal to 17 and less than 20, it's evening
+
+// otherwise, it's night
+
+
+// Output the time of day
+Console.WriteLine($"The current period of day is: {timeOfDay}"); // another way to format strings in C# using string interpolation

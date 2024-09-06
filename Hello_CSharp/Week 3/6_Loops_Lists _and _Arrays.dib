@@ -1,0 +1,238 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Loops, Lists and Arrays
+
+#!markdown
+
+Read the following code examples. These are different ways to collect numbers together using the same varibale name. 
+
+#!markdown
+
+**for loop**
+
+#!csharp
+
+using System;
+
+// an array of integers
+int [] iArray = {1, 2, 3, 4, 5};
+
+// loop through the array and print each element
+for (int i = 0; i < iArray.Length; i++) {
+    Console.WriteLine(iArray[i]);
+}
+
+#!markdown
+
+**foreach Loop**
+
+#!csharp
+
+using System;
+
+// an array of integers
+int [] iArray = {1, 2, 3, 4, 5};
+
+// loop through the array and print each element - easier way
+foreach (int number in iArray) {
+    Console.WriteLine(number);
+}
+
+#!markdown
+
+**Lists** <br>
+In C#, a `List` is a collection type within the `System.Collections.Generic` namespace. It is a *generic* type, meaning it can store elements of any specified type. The `List<T>` class provides a way to store a dynamic collection of objects that can be accessed by index a bit like an array. The List object type is defined by `<T>` where `T` is repalce by int, string, char and other types or objects.
+
+#!csharp
+
+using System;
+using System.Collections.Generic; // needed for List
+
+// A list of integers ~ lists are more flexible than arrays for adding and removing elements
+List<int> iList = new List<int> {1, 2, 3, 4, 5};
+
+// loop through the list and print each element - easier way
+foreach (int number in iList) {
+    Console.WriteLine(number);
+}
+
+#!markdown
+
+The following shows code examples of how to manipulate items in a List. Run each and check the outputs to observe numbers being added or removed.
+
+#!csharp
+
+iList.Add(1);
+iList.Add(2);
+
+// loop through the list and print each element - easier way
+foreach (int number in iList) {
+    Console.WriteLine(number);
+}
+
+#!csharp
+
+iList.Insert(1, 9); // Inserts 3 at index 1 ~ which is the second element in the list
+
+// loop through the list and print each element - easier way
+foreach (int number in iList) {
+    Console.WriteLine(number);
+}
+
+#!csharp
+
+iList.Remove(2); // Removes the first occurrence of 2
+iList.RemoveAt(0); // Removes the element at index 0
+
+// loop through the list and print each element - easier way
+foreach (int number in iList) {
+    Console.WriteLine(number);
+}
+
+#!csharp
+
+Here is an example of a List containing a text string. Note that the operations explained above can also be used with strings. 
+
+#!csharp
+
+bool containsOne = iList.Contains(1); // Checks if the list contains 1
+int indexOfThree = iList.IndexOf(3); // Finds the index of the first occurrence of 3
+int firstEvenNumber = iList.Find(x => x % 2 == 0); // Finds the first even number ~ => is a lambda expression that is a short way to write a function inline
+
+// print a message if the list contains 1
+if (containsOne) {
+    Console.WriteLine("The list contains a 1");
+}
+// print the index of 3
+Console.WriteLine("The index of 3 is: " + indexOfThree);
+// print the first even number
+Console.WriteLine("The first even number is: " + firstEvenNumber);
+
+#!markdown
+
+Here is an example of a List containing a text string. Note that the operations explained above can also be used with strings. 
+
+#!csharp
+
+List<string> names = new List<string>(); // Creates a list of strings
+
+// add several names to the list at once
+names = new List<string> {"John", "Jane", "Jim", "Jill"};
+// add a name to the list
+names.Add("Jack");
+
+// loop through the list and print each element - easier way
+foreach (string name in names) {
+    Console.WriteLine(name);
+}
+
+#!markdown
+
+Lists can store objects, which can be very useful in game development. Here is a Player class object that can store a players name and their highscore. Then we create 4 instances of different players and store these in a List for easy management. In games, you may have a List of bullets, different weapons that a player has, or sound/particle effects. 
+
+#!csharp
+
+Use the following code as a start point. 
+
+- Create a List of bullets with a range of values
+- Iterate through the list to soot the bullets using the Shoot method below by `bullet.Shoot();` where bullet is the temporary variable in a `foreach` statement.
+
+#!markdown
+
+**Exercise**: 
+
+#!markdown
+
+Use the following code as a start point. 
+
+- Create a List of bullets with a range of values
+- Iterate through the list to soot the bullets using the Shoot method below by `bullet.Shoot();` where bullet is the temporary variable in a `foreach` statement.
+
+#!csharp
+
+Sorting examples.
+
+#!markdown
+
+## Extra ~ Sorting Items in Lists.
+
+#!markdown
+
+**A basic `List` sort.**
+
+#!markdown
+
+**Bubble Sort**
+<br><br>
+For reference and your interest - an old fashioned Bubble sort is implemented as follows. Useful if you are coding with a language that doesn't have a built-in `sort` function. 
+<br><br>
+This is an example of nested `for` loops - one loop is inside another. E.g. The first loop sets i = 0, then the second loop iterates from j = 0 until j = (players.Count - 1 - i), before the first loop sets i = 1 and the second loop iterates from j = 0 until j = (players.Count - 1 - i) again. The clever part here is that i increments each time the j loop iterates so the number of iterations of this loop gets smaller over time (it *bubbles* the higher numbers to the top ~ or pushes the smallers numbers down). 
+
+#!markdown
+
+**Sorting objects in a `List` based on one property of the class (e.g. player score).** 
+
+#!markdown
+
+The `=>` Lambda function is off putting to coding new comers (and experienced!). *You can ignore this for now if it looks confusing to you*. 
+<br><br>
+In the example below `=>` allows us to define that we want to compare player `Score` with the `Sort` function and only swap numbers in the list if the lower number in the list has a larger value than the number above it in the list.
+
+#!csharp
+
+// Compare all players in the list by score and sort them in descending order
+players.Sort((p1, p2) => p2.Score.CompareTo(p1.Score));
+
+// Print the name and score of each player
+foreach (Player player in players) {
+    Console.WriteLine(player.Name + " has a score of " + player.Score);
+}
+
+#!markdown
+
+This line of code is written in C# and it is sorting a list of players based on their scores in descending order. Let's break it down step by step:
+
+1. `players`: This is the name of the list that contains the players. It is assumed that `players` is a list of objects of a class that has a property called `Score`.
+
+2. `.Sort()`: This is a method that is used to sort the elements of a list. It takes a parameter called a comparer, which is a function that defines the comparison logic for sorting the elements.
+
+3. `(p1, p2) => p2.Score.CompareTo(p1.Score)`: This is a lambda expression that defines the comparison logic for sorting the players. It compares the scores of two players (`p1` and `p2`) and returns the result of the comparison.
+
+4. `p2.Score.CompareTo(p1.Score)`: This is the comparison logic used in the lambda expression. It compares the scores of `p1` and `p2` using the `CompareTo()` method of the `Score` property. The `CompareTo()` method returns a negative value if `p2.Score` is less than `p1.Score`, a positive value if `p2.Score` is greater than `p1.Score`, and zero if they are equal.
+
+5. `p2.Score.CompareTo(p1.Score)` is used in the lambda expression to determine the order of the elements during the sorting process. By using `p2.Score.CompareTo(p1.Score)` instead of `p1.Score.CompareTo(p2.Score)`, the list will be sorted in descending order based on the players' scores.
+
+So, in summary, this line of code sorts the `players` list in descending order based on the players' scores using a lambda expression as the comparer.
+
+#!markdown
+
+**Bubble Sort**
+<br><br>
+For reference and your interest - an old fashioned Bubble sort is implemented as follows. Useful if you are coding with a language that doesn't have a built-in `sort` function. 
+<br><br>
+This is an example of nested `for` loops - one loop is inside another. E.g. The first loop sets i = 0, then the second loop iterates from j = 0 until j = (players.Count - 1 - i), before the first loop sets i = 1 and the second loop iterates from j = 0 until j = (players.Count - 1 - i) again. The clever part here is that i increments each time the j loop iterates so the number of iterations of this loop gets smaller over time (it *bubbles* the higher numbers to the top ~ or pushes the smallers numbers down). 
+
+#!csharp
+
+        // Bubble sort algorithm to sort players by score in descending order
+        // This is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order
+        for (int i = 0; i < players.Count - 1; i++) {
+            for (int j = 0; j < players.Count - 1 - i; j++) {
+                if (players[j].Score < players[j + 1].Score) {
+                    // Swap the players
+                    Player temp = players[j];
+                    players[j] = players[j + 1];
+                    players[j + 1] = temp;
+                }
+            }
+        }
+
+        // Print sorted players
+        Console.WriteLine("Players sorted by score from high to low:");
+        foreach (var player in players) {
+            Console.WriteLine($"{player.Name}: {player.Score}");
+        }

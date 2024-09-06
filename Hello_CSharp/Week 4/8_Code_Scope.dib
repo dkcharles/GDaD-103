@@ -1,0 +1,107 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Scope
+The lines of code in a program can become very long and so managing the code can become increasingly complex. One issue is that we might use the same variable name or function in two separate places. If a compiler finds a naming conflict it stops compiling the code and reports an error. When we find an error we could change the variable/function/class names. However, quite often it is better to use the same name for code readability. We can manage conflicts between variable/function/class naming by defining code scope with namespaces and curly braces `{ ... }`. Let's look several examples below. 
+
+#!csharp
+
+using System;
+// 
+
+// This is the global scope
+int x = 5;
+Console.WriteLine("Start Global x = " + x); // 5
+
+    { // curly braces define a block scope
+        // This is a block scope
+        int x = 10;
+        Console.WriteLine("  Start Local Block x = " + x); // 10
+        for (int i = 0; i < 1; i++) // loop once
+        {
+            // This is a nested block scope
+            int x = 20; 
+            // code in the nested block scope can see the outer block scope - so we can't define x twice. 
+            // delete the int keyword and run.
+            // next comment out the int x = 20; line and run.
+            Console.WriteLine("    Nested Local Block x = " + x); // 20
+        }
+        Console.WriteLine("  End Local Block x = " + x);
+    }
+
+Console.WriteLine("End Global x = " + x); // 5
+
+#!csharp
+
+// This doesn't run - try it. Read the error message and try and understand it.
+
+ScopeDemo sd = new ScopeDemo();
+sd.DemonstrateScope();
+
+class ScopeDemo
+{
+    // Private class scope (also called field or member variable)
+    private int classInternalVariable = 10;
+    // Public class scope - accessible to other classes
+    public int classExternalVariable = 20;
+    // Static class scope - accessible without creating an instance of the class
+    public static int classStaticVariable = 30;
+
+    public void DemonstrateScope()  // note that this method is public
+    {
+        // Local scope
+        int localVariable = 20;
+
+        Console.WriteLine("Class Variable: " + classInternalVariable); // Accessible here
+        Console.WriteLine("Local Variable: " + localVariable); // Accessible here
+
+        if (true)
+        {
+            // Block scope
+            int blockVariable = 40;
+            Console.WriteLine("Block Variable: " + blockVariable); // Accessible here
+        }
+
+        // Trying to access blockVariable here will result in a compile-time error as blockVariable was declared within the scope of the if block
+        Console.WriteLine(blockVariable); // Commenting this line will fix the error
+    }
+}
+        
+
+#!csharp
+
+// Though we have two instances of the ScopeDemo class, they are independent of each other and do not share the same variables.
+ScopeDemo sd1 = new ScopeDemo();
+ScopeDemo sd2 = new ScopeDemo();
+
+Console.WriteLine("sd1 Private Variable: " + sd1.classInternalVariable);    // Can't access private variable of class instance. Comment this line to fix the error
+Console.WriteLine("sd1 Public Variable: " + sd1.classExternalVariable);     // Can access public variable of class instance.
+Console.WriteLine("Block Variable: " + sd1.blockVariable);                  // Can't access blockVariable as it is not a class variable. Comment this line to fix the error
+
+ScopeDemo.classStaticVariable = 100;   // Changing the value of a static variable in one instance will change it for all instances
+Console.WriteLine("A static variable can be accessed directly using the class name - classStaticVariable = " + ScopeDemo.classStaticVariable);    // Can access static variable without creating an instance of the class.
+
+class ScopeDemo
+{
+    // Private class scope (also called field or member variable)
+    private int classInternalVariable = 10;
+    // Public class scope - accessible to other classes
+    public int classExternalVariable = 20;
+    // Static class scope - accessible without creating an instance of the class
+    public static int classStaticVariable = 30;
+
+    public void DemonstrateScope()  // note that this method is public
+    {
+        // Local scope
+        int localVariable = 20;
+
+        if (true)
+        {
+            // Block scope
+            int blockVariable = 40;
+        }
+    }
+}

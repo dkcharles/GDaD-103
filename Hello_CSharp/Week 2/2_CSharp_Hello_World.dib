@@ -1,0 +1,155 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!markdown
+
+## Hello World ~ An Introduction to Coding in C#
+
+#!markdown
+
+A basic modern "Hello World" application in C# looks like this:
+
+```c#
+using System;
+// keywords are explained at the bottom of this notebook
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
+```
+
+A `Main` function is the entry point for any C# program - where the program starts. However, this won't compile in these notebooks because it is assumed that the `Main` function has been called already. Instead, we can run the following to execute our **Hello World** code. Change the message that is written out to the console window (keep it clean). 
+
+#!csharp
+
+Console.WriteLine("Hello, World!");
+
+#!markdown
+
+### Adding Numbers
+
+A new programmer must learn that program code (generally) runs one line at a time and that the order in which code executes each line of code is important. Sometimes, a program will have loops, branches or conditions, but the execution order is still important.
+
+For example, look at the following pseudocode to add two numbers together. Consider the logical steps: Two numbers must be defined and put in memory before they can be added together. 
+
+> 1. Line 1: Input the first number
+> 2. Line 2: Input second number
+> 3. Line 3: Calculate the sum of the two numbers
+> 4. Line 4: Output the result
+
+The following code shows how this is implemented in C#. 
+
+1. Two variables are declared to store integer values (whole numbers) in memory, where the memory locations are labelled `NumberOne` and `NumberTwo`.
+2. An integer variable, `Answer`, is declared to hold the result of the addition of the two numbers. 
+3. `NumberOne` and `NumberTwo` are combined using the addition symbol `+` and assigned to the variable `Answer` using the assignment operator `+`.
+4. The result is then output to a Console window. This is because this Console program runs in a Terminal (e.g. not a Windows GUI program).
+
+Left click the arrow at the top left of each code window to run the code. You need to run each code window in turn from top to bottom of this notebook as some executions are required before performing another. That is, the code below in intended to be run in sequence.
+
+*NB: All of the outputs can be cleared, restarted, or rerun all chosen by clicking the appropriate button at the top of this notebook.* 
+
+#!csharp
+
+// First we define any libraries that we may need to use in this notebook
+// System is needed for the Console.WriteLine() function
+
+using System;
+
+// Example utility function to print a text ~ to make the code more readable
+void Print(string x) {
+  Console.WriteLine(x);
+}
+
+#!csharp
+
+/*
+    Example 1: Simple addition of two numbers
+    Author: Prof Darryl Charles
+    Date: 9th June 2024
+    - Note this way of commenting is a block comment
+*/
+
+// Declare two integer variables and assign values to them
+int NumberOne = 5;
+int NumberTwo = 10;
+
+int Answer = 0;     // Declare an integer variable to hold the answer and initialise it to zero
+
+Answer = NumberOne + NumberTwo;  // Add the two numbers together and store the result in the Answer variable
+Print("The sum of " + NumberOne + " and " + NumberTwo + " is " + Answer);  // Print the result to the console
+
+#!markdown
+
+The answer to the addition should be visible above. If not, ensure you have clicked the execute cell arrow on the left of the code window.
+
+A few important things to note:
+
+- In C#, you can add comments explaining your code that does not get compiled as code. A single comment line is started with `//` and can be placed on a blank line or after some code. A way to a add several lines of comments is to use `/* ..... */`. Comments are important if you work in teams, and to help you remember what you have coded! 
+
+-  Lines of code must be terminated with a `;` ~ this is so the compiler will know where one line of code stops and another begins. C, C++, and Java use the same convention, but Python uses a simple line ending as an indicator. 
+
+-  In the Print function, you can see curly brackets, `{ ... }`. These block lines of code within the same scope, keeping our code organised and tidy. Python uses a blank line after a function to do the same thing. 
+
+#!markdown
+
+**Exercise** 
+
+1. Change the integer values above, run the cell, and check the result.
+
+2. Add a third variable, `NumberThree`, and change the code to add the three numbers together and output the answer.
+
+3. Modify the code as follows:
+
+   ```c#
+   // Declare two integer variables and assign values to them
+   int NumberOne = 5;
+   int NumberTwo = 10;
+   int NumberThree = 15;
+   
+   NumberTwo = NumberThree;
+   
+   int Answer = 0;     // Declare an integer variable to hold the answer and initialise it to zero
+   
+   Answer = NumberOne + NumberTwo + NumberThree;  // Add the two numbers together and store the result in the Answer variable
+   Print("The sum of " + NumberOne + " and " + NumberTwo + " and " + NumberThree + " is " + Answer);  // Print the result to the console
+   ```
+
+   Can you predict the answer? Does `NumberTwo = NumberThree;` change the value stored in `NumberTwo`? 
+
+4. Set the integer values to decimal (floating point) numbers. Note that an f is required to define this type of number. E.g.
+
+   ```c#
+   int NumberOne = 5.5f;
+   int NumberTwo = 10.5f;
+   ```
+
+   What happens? Change the values back to 5 and 10.
+
+5. Similarly, set the variables equal to text values like:
+
+   ```C#
+   int NumberOne = "five";
+   int NumberTwo = "ten";
+   ```
+
+   What happens when you try to run this code? 
+
+#!markdown
+
+### Further Explaination
+
+The longer "Hello World" at the top of this notebook looks complex at first but we will explaining code like this in detail as we go on. For now, here are a few pointers:
+
+- `using` is a keyword that allows you to import libraries with additional code functions. `system` is a very common library with input/output functions among others. 
+- The semicolon `;` is required in C# to tell the compiler where the end of a line of code is. 
+- The curly brackets `{ ... }` wrap portions of code together. Code within curly brackets are said to be in the same scope. E.g. Variables not in the same scope cannot access each other. This helps us keep our code tidy and manageable. More on this later.
+- A `namespace` allows you to attach a label to specific bits of code. There can be several code namespaces in a program, and you can refer to each separate portion of code via its namespace. E.g. `weapons.shootgun`, where weapons is the namespace and shootgun is a function in this namespace.It helps keep portions of code in its own scope. 
+- A `class` is a blueprint for a code object that encapsulates properties and functionality of object types. E.g. we might have a *fruit* as a class, where *apple* and *orange* are instances of this class created in computer memory.
+- `static` is an instruction to the compiler to keep this code at a fixed point in memory. The code goes into *stack* memory rather than *heap* memory, which is more dynamic. 

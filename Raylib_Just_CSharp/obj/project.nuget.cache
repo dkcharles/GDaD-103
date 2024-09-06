@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "euiHu6tJWog=",
+  "success": true,
+  "projectFilePath": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Just_CSharp\\Raylib_HelloWorld.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Darryl\\.nuget\\packages\\raylib-cs\\6.0.0\\raylib-cs.6.0.0.nupkg.sha512",
+    "C:\\Users\\Darryl\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,232 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Operators
+
+#!markdown
+
+`+` with integers<br> 
+1. Run the following code and check that it is giving the correct output.
+1. Add a Number_Three integer and assign the integer value 30 to it.
+2. Use a `-` to subtract the numbers and output the result.
+3. Use a `*` to multiply the numbers together and output the result.
+4. Use a `/` to divide `Number_Two` by `Number_One` and output the result.
+5. What happens if you divide `One` by `Number_Two` and output the result.
+
+#!csharp
+
+using System;   
+// add two numbers in C#
+
+int Number_One = 10;
+int Number_Two = 20;
+
+int Sum = Number_One + Number_Two; 
+
+Console.WriteLine("The sum of two numbers is: " + Sum);
+
+#!markdown
+
+`+` with strings <br> 
+1. Run and check the following output.
+2. Add a third string "Wonderful " in the middle of the combined string. Code a neatly as possible.
+
+#!csharp
+
+// add two strings in C#
+
+string Text_One = "Hello "; // note the space at the end of the string
+string Text_Two = "World";
+
+string Text_Three = Text_One + Text_Two;
+
+Console.WriteLine("My message is: " + Text_Three);
+
+#!markdown
+
+The Modulus operator `%` returns the remainder after a division. E.g. 10 divided by 3 = 3 remainder 1. <br>
+1. Try setting different integer values for `Number` below. 
+
+#!csharp
+
+// modulus operator in C#
+
+int Number = 10;
+int Divisor = 3;
+
+int Remainder = Number % Divisor; // modulus operator % returns the remainder of dividing two integers
+
+Console.WriteLine("The remainder of dividing " + Number + " by " + Divisor + " is " + Remainder);
+
+#!markdown
+
+### Assignment Operators
+
+Change the numbers in the following examples to make sure you understand the code and the operators.
+
+#!csharp
+
+// Add and assign
+
+int Number = 10;
+int Increment = 5;
+Number += Increment; // Number = Number + Increment = 15
+
+Console.WriteLine("The new value of Number is: " + Number);
+
+#!csharp
+
+// Subtract and assign
+
+int Number = 10;
+int Decrement = 5;
+Number -= Decrement; // Number = Number + Increment = 15
+
+Console.WriteLine("The new value of Number is: " + Number);
+
+#!csharp
+
+// Multiply and assign
+
+int Number = 10;   
+int Multiplier = 5;
+
+Number *= Multiplier; // Number = Number * Multiplier = 50
+
+Console.WriteLine("The new value of Number is: " + Number);
+
+#!csharp
+
+// Divide and assign
+
+int Number = 10;
+int Divisor = 5;
+
+Number /= Divisor; // Number = Number / Divisor = 2
+
+Console.WriteLine("The new value of Number is: " + Number);
+
+#!csharp
+
+// Modulus and assign
+
+int Number = 10;
+int Divisor = 3;
+
+Number %= Divisor; // Number = Number % Divisor = 1
+
+Console.WriteLine("The new value of Number is: " + Number);
+
+#!csharp
+
+// Example of modulus operator to check if a number is even or odd
+// This can be used in timers - e.g. a counter continually increments and is modulus divided by 100 to check if a second has passed (no remainder at 100, 200, 300, etc.)
+
+int Number = 10;
+
+if (Number % 2 == 0) // if the remainder of dividing Number by 2 is 0, then Number is even
+{
+    Console.WriteLine(Number + " is an even number");
+}
+else
+{
+    Console.WriteLine(Number + " is an odd number");
+}
+
+#!markdown
+
+### Comparison Operators 
+Change the number below and check the output
+
+#!csharp
+
+// less than operator <, greater than operator >, less than or equal to operator <=, 
+// greater than or equal to operator >=, equal to operator ==, not equal to operator !=
+
+int Number_One = 10;
+int Number_Two = 20;
+
+if (Number_One > Number_Two)
+{
+    Console.WriteLine(Number_One + " is greater than " + Number_Two);
+}
+else if (Number_One < Number_Two)
+{
+    Console.WriteLine(Number_One + " is less than " + Number_Two);
+}
+else if (Number_One == Number_Two)
+{
+    Console.WriteLine(Number_One + " is equal to " + Number_Two);
+}
+
+#!markdown
+
+### Logical Operators
+
+#!markdown
+
+Add you own bool variables, assign true or false to them and check what happens when you apply different logical operators. 
+
+#!csharp
+
+// the values in the variables can be seen in the Polyglot IDE console output below
+// note that in the variable name we use the shorthand true = 1 and false = 0 to make the output more readable
+
+bool Result_1_and_0 = true && false; // Result is false because both conditions must be true for the AND operator to return true
+bool Result_1_and_1 = true && true; // Result is true because both conditions are true 
+bool Result_0_and_0 = false && false; // Result is false because both conditions are false 
+bool Result_1_or_0 = true || false; // Result is true because only one condition must be true for the OR operator to return true
+bool Result_1_or_1 = true || true; // Result is true because both conditions are true
+bool Result_0_or_0 = false || false; // Result is false because both conditions are false 
+bool Result_not_1 = !true; // Result is false because the NOT operator inverts the value of the condition
+bool Result_not_0 = !false; // Result is true because the NOT operator inverts the value of the condition
+
+#!markdown
+
+### Bitwise Operators
+Note that thase concepts are a bit tougher than the ones above and can be left until you are more confident in coding.
+<br><br>
+Bitwise operators are really for binary logic operations and are only used in specialist situations like optimising framerate in dynamic voxel game worlds like Minecraft. They are still fun though!
+<br><br>
+Bitwise operators can act like masks - so for example binary number `0b1000` along with an AND operator `&` masks out the first three bits of a number ~ so it can be used to check if the 4th bit is active (1) in any number.  
+<br>
+Bit operations may also be used in electronics, e.g. to switch LEDs on and off.
+<br>
+Remember: 1111 is 8 + 4 + 2 + 1 = 15. 1001 is 8 + 0 + 0 + 1 = 9.
+
+#!csharp
+
+// Define some binary numbers
+
+int Binary_1 = 0b1010; // 10 in decimal
+int Binary_2 = 0b1100; // 12 in decimal
+
+// Perform bitwise AND operation
+int Binary_A = Binary_1 & Binary_2; // 0b1000 = 8 in decimal
+// Perform bitwise OR operation
+int Binary_B = Binary_1 | Binary_2; // 0b1110 = 14 in decimal
+// Perform bitwise XOR operation
+int Binary_C = Binary_1 ^ Binary_2; // 0b0110 = 6 in decimal
+
+// Shift left by 1 bit
+int Binary_D = Binary_1 << 1; // 0b10100 = 20 in decimal
+// Shift right by 1 bit
+int Binary_E = Binary_1 >> 1; // 0b101 = 5 in decimal
+
+
+// Convert to binary strings
+string BinaryString_A = Convert.ToString(Binary_A, 2).PadLeft(4, '0');
+string BinaryString_B = Convert.ToString(Binary_B, 2).PadLeft(4, '0');
+string BinaryString_C = Convert.ToString(Binary_C, 2).PadLeft(4, '0');
+string BinaryString_D = Convert.ToString(Binary_D, 2).PadLeft(4, '0');
+string BinaryString_E = Convert.ToString(Binary_E, 2).PadLeft(4, '0');
+
+// Output the results ~ note that /t is a tab character that is used to align the output
+Console.WriteLine("Binary_1 & Binary_2 \t= \t" + BinaryString_A + " (in binary) \t=\t " + Binary_A + " (in decimal)");
+Console.WriteLine("Binary_1 | Binary_2 \t= \t" + BinaryString_B + " (in binary) \t=\t " + Binary_B + " (in decimal)");
+Console.WriteLine("Binary_1 ^ Binary_2 \t= \t" + BinaryString_C + " (in binary) \t=\t " + Binary_C + " (in decimal)");
+Console.WriteLine("Binary_1 << 1 \t\t= \t" + BinaryString_D + " (in binary) \t=\t " + Binary_D + " (in decimal)");
+Console.WriteLine("Binary_1 >> 1 \t\t= \t" + BinaryString_E + " (in binary) \t=\t " + Binary_E + " (in decimal)");

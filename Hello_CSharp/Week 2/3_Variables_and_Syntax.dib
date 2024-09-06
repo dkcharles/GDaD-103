@@ -1,0 +1,64 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Variables, Keywords and Code Syntax
+
+### Typical Data Types
+A variable is so names because the values in it can be changed (they are mutable). 
+
+Variables in C# must be declared with a type. The basic data types include `int`, `double`, `char`, `bool`, and `string`. For example:
+
+   ```csharp
+   int age = 25;
+   float price = 19.95f;
+   char grade = 'A';
+   bool isCSharpFun = true;
+   string name = "John";
+   ```
+
+Note that there are also code keywords for defining information that cannot be changed (immutable values):
+- `const`: Value must be set at declaration and cannot change.
+- `readonly`: Value can be set at declaration during runtime (when the program is running).
+
+**Exercise**: Change the data in the variables at the top of the program below with some invented student information, then run the code cell:
+
+#!csharp
+
+using System;
+
+string name = "..?..";          // text data type
+int age = 0;                    // integer data type
+float averageMark = 19.95f;     // floating-point data type
+char averageGrade = 'A';        // single character data type
+bool coursePassed = false;       // boolean (logical) data type
+
+// ! add pass or fail logic here to set the coursePassed variable !
+
+// some code to determine if the course was passed or failed
+string result = "";
+if (coursePassed == true) { result = "Passed"; }
+else { result = "Failed"; }
+
+// building the message to be displayed
+string message = name   + " is " + age + " years old. He has an average mark of " 
+                        + (int)averageMark + " which gives him a grade = " + averageGrade 
+                        + " This means he has " + result + " the course."; 
+// displaying the message
+Console.WriteLine(message);
+
+#!markdown
+
+A few things to note about the code above.
+
+- You can build strings in C# by adding the contents of variable to a `string` variable. Using the `+` operator in this way is an example of *operator overloading*, showing that an operator may be used in several different ways, depending on the content. You might expect the `+` only to add numbers together, but overloading it to add text together is very useful.
+- We have used `if` `else` conditions to check if the student has passed their course. To acheive this we have also used an equivalence operator,  `==` . This operator checks if two entities contain equal values. If they do then a boolean value of `true` is the result, otherwise a `false` is the outcome. 
+- Note that normal round `( )` brackets are needed for the if condition logic.
+- Note the use of curly brackets to separate the code for pass and fail outcomes. Also, the use of a `;` after the line of code in these brackets. **Most beginner coding errors are due to a missing semi-colon or curly bracket**.
+
+**Challenge**: The code above would be better if the `coursePassed` variable would be set based on whether the `averageMark` is equal to or greater than 40%. Try to add this code in the location marked by the exclamation marks `!`. 
+
+- The logic for this goes something like ~ if averageMark >= 40; coursePassed = true; else coursePassed = false;
+- This is close to the correct code logic but the correct syntax needs to be used. 

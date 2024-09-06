@@ -1,0 +1,171 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Classes
+
+#!markdown
+
+Run the following code and look at the output. Examine the code to see how a base Animal class if defined, then specific animal instances are declared using this base class as a prototype. There is further explanation of the code after the code cell. 
+
+#!csharp
+
+using System;
+// This is a simple example of defining a classes, creating instances of those classes, and calling methods on those instances.
+// Polymorphism is the ability for objects of different classes to be treated as objects of a common base class.
+
+// Base class
+class Animal
+{
+    // Property to hold the animal's name
+    public string Name { get; set; } // correct way to define a property
+
+    // Constructor to initialize the animal's name
+    public Animal(string name)
+    {
+        Name = name;
+    }
+
+    // Virtual method to be overridden by derived classes
+    public virtual void MakeNoise()
+    {
+        Console.WriteLine($"{Name} makes some generic animal noise");
+    }
+}
+
+Console.WriteLine("Animal class blueprint created");
+
+#!csharp
+
+// Create instances of the derived classes
+
+// Derived class: Dog
+class Dog : Animal
+{
+    // Constructor to initialize the dog's name
+    public Dog(string name) : base(name) { } // Call the base class constructor
+
+    // Override the MakeNoise method
+    public override void MakeNoise()
+    {
+        Console.WriteLine($"{Name} says: Woof!");
+    }
+}
+
+// Derived class: Cat
+class Cat : Animal
+{
+    // Constructor to initialize the cat's name
+    public Cat(string name) : base(name) { } // Call the base class constructor
+
+    // Override the MakeNoise method
+    public override void MakeNoise()
+    {
+        Console.WriteLine($"{Name} says: Meow!");
+    }
+}
+
+// Derived class: Cow
+class Cow : Animal
+{
+    // Constructor to initialize the cow's name
+    public Cow(string name) : base(name) { } // Call the base class constructor
+
+    // Override the MakeNoise method
+    public override void MakeNoise()
+    {
+        Console.WriteLine($"{Name} says: Moo!");
+    }
+}
+
+Console.WriteLine("Dog, Cat, and Cow classes derived from Animal class");
+
+#!csharp
+
+Console.WriteLine("Creating instances of each class and calling their MakeNoise method \n"); // note the newline character \n here
+
+// Create instances of each animal with names
+Animal genericAnimal = new Animal("Generic Animal");
+Dog dog = new Dog("Buddy");
+Cat cat = new Cat("Whiskers");
+Cow cow = new Cow("Bessie");
+
+// Call the MakeNoise method on each instance
+genericAnimal.MakeNoise(); // Output: Generic Animal makes some generic animal noise
+
+// Demonstrate polymorphism
+Animal[] animals = { dog, cat, cow }; // Array of Animal objects
+
+foreach (Animal animal in animals) // Loop through each Animal object in the array
+{
+    animal.MakeNoise(); // Output: Buddy says: Woof!, Whiskers says: Meow!, Bessie says: Moo!
+}
+
+#!markdown
+
+### Explanation:
+
+1. **Base Class: `Animal`**
+   - Contains a virtual method `MakeNoise` which can be overridden by derived classes.
+   - The constructor takes a string parameter to initialize the Name.
+   - By default, `MakeNoise` prints "Some generic animal noise".
+
+2. **Derived Classes: `Dog`, `Cat`, `Cow`**
+   - Each derived class constructor calls the base class constructor to set the Name.
+   - Each class inherits from `Animal` and overrides the `MakeNoise` method.
+   - `Dog` prints "Woof!", `Cat` prints "Meow!", and `Cow` prints "Moo!".
+
+3. **Instance Code:**
+   - Creates instances of `Animal`, `Dog`, `Cat`, and `Cow`.
+   - Calls the `MakeNoise` method on each instance to demonstrate individual behaviour.
+   - Demonstrates polymorphism by iterating through an array of `Animal` type, calling `MakeNoise` on each, and observing the overridden behaviour.
+
+This example illustrates how inheritance allows derived classes to extend or modify the behaviour of a base class, and how polymorphism lets us treat objects of different derived classes uniformly while still invoking their specific behaviours.
+
+#!markdown
+
+**Exercise**
+
+1. Add Two New Animals
+
+- Add two more animal classes (e.g., Bird and Sheep) that inherit from Animal.
+- Implement a constructor (like the ones above) in each new class to set the animal's name.
+- Override the MakeNoise method in each new class to print an appropriate noise for the animal (e.g., "Tweet!" for Bird and "Baa!" for Sheep).
+
+2. Implement Additional Behaviour:
+
+- Add a new method `Move` in the Animal class that says it is moving.
+- Override the `Move` method in each derived class to include specific information (e.g., a bird is flying, a cat is prowling, etc.).
+
+3. Call Move Method
+
+- Within the `foreach` loop call the `Move` method for each animal.
+- **Challenge**! Add a boolean variable to the base class that tracks whether the animal is moving, e.g., `public bool isMoving = false;` Then use this value to decide whether an animal is moving or not. This code may be best placed in the `Move` method but there are several ways to implement this.
+- **Extra Challenge**! Create a method/function that changes the `isMoving` variable between true and false every so often (randomly). The follow is code for a random number generator - this might be used to decide when to switch an animal between moving and being still. You can run this code several times to test the randomness.
+
+#!csharp
+
+bool isMoving = false;
+
+// Initialize the random number generator
+Random random = new Random();
+
+// Generate a random number between 1 and 1000
+int randomNumber = random.Next(11); // Next(max) generates numbers from 0 to max-1
+
+// Print the generated number
+Console.WriteLine($"Generated Random Number: {randomNumber}");
+
+// Check if the number is greater than 990
+if (randomNumber > 7)
+{
+    isMoving = true;
+    Console.WriteLine("The animal is moving.");
+}
+else
+{
+    isMoving = false;
+    Console.WriteLine("The animal is not moving.");
+}
