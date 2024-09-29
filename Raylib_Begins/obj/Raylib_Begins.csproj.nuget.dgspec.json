@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj": {}
+    "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj": {}
   },
   "projects": {
-    "e:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj": {
+    "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj",
+        "projectUniqueName": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj",
         "projectName": "Raylib_Begins",
-        "projectPath": "e:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj",
+        "projectPath": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj",
         "packagesPath": "C:\\Users\\Darryl\\.nuget\\packages\\",
-        "outputPath": "e:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\obj\\",
+        "outputPath": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Darryl\\AppData\\Roaming\\NuGet\\NuGet.Config",
