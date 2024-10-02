@@ -187,7 +187,7 @@ bool Result_not_0 = !false; // Result is true because the NOT operator inverts t
 #!markdown
 
 ### Bitwise Operators
-Note that thase concepts are a bit tougher than the ones above and can be left until you are more confident in coding.
+Note that these concepts are a bit tougher than the ones above and can be left until you are more confident in coding.
 <br><br>
 Bitwise operators are really for binary logic operations and are only used in specialist situations like optimising framerate in dynamic voxel game worlds like Minecraft. They are still fun though!
 <br><br>
