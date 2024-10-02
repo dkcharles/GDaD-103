@@ -1,0 +1,13 @@
+Link to the C# repository version of RayLib https://github.com/chrisdill/raylib-cs (note that the standard library uses C++).
+
+Create a 8.0 dotnet project running the following command in a Windows Terminal or PowerShell (make sure that the Terminal is in the correct folder): 
+
+	dotnet new console
+
+For RayLib, though, you need to create a dotnet 6.0 project with a main project visible:
+
+	dotnet new console --framework net6.0 --use-program-main
+
+Then for Raylib you need to add its game library files by runnning the follwoing from a terminal in teh same folder as the dotnet project:
+
+	dotnet add package Raylib-cs
