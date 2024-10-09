@@ -36,7 +36,7 @@ Console.WriteLine("End Global x = " + x); // 5
 
 #!csharp
 
-// This doesn't run - try it. Read the error message and try and understand it.
+// This doesn't run - try it. Read the error message and try and understand it and fix it.
 
 ScopeDemo sd = new ScopeDemo();
 sd.DemonstrateScope();
