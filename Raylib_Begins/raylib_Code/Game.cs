@@ -15,7 +15,7 @@ public class Game
         Console.WriteLine(GameManager.WELCOME_MESSAGE); // Print "Hello, World!" to the console
     }
 
-    public void Run()
+    public void Start()
     {
 
         InitWindow(GameManager.SCREENWIDTH, GameManager.SCREENHEIGHT, GameManager.WINDOW_TITLE);
