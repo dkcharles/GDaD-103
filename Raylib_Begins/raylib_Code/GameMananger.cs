@@ -16,11 +16,6 @@ public sealed class GameManager
         public int playerHealth = 100; // Player health
 #endregion
 
-    // Private constructor to prevent instantiation from outside the class
-    private GameManager()
-    {
-        // Initialization code here
-    }
     // Public static method to get the singleton instance
     public static GameManager Instance
     {
