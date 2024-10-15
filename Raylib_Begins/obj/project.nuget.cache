@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "o6tqCJF1C08=",
+  "dgSpecHash": "Gr80yru6ou0=",
   "success": true,
-  "projectFilePath": "D:\\_github\\GDaD-103\\Raylib_Begins\\Raylib_Begins.csproj",
+  "projectFilePath": "C:\\_Github\\Teaching\\GDaD-103\\Raylib_Begins\\Raylib_Begins.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Darry\\.nuget\\packages\\raylib-cs\\6.1.1\\raylib-cs.6.1.1.nupkg.sha512",
-    "C:\\Users\\Darry\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Darry\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Darry\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.33\\microsoft.netcore.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\Darry\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.33\\microsoft.windowsdesktop.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\Darry\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.33\\microsoft.aspnetcore.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\Darry\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.33\\microsoft.netcore.app.host.win-x64.6.0.33.nupkg.sha512"
   ],
   "logs": []
 }
