@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\_github\\GDaD-103\\Raylib_Begins\\Raylib_Begins.csproj": {}
+    "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj": {}
   },
   "projects": {
-    "D:\\_github\\GDaD-103\\Raylib_Begins\\Raylib_Begins.csproj": {
+    "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\_github\\GDaD-103\\Raylib_Begins\\Raylib_Begins.csproj",
+        "projectUniqueName": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj",
         "projectName": "Raylib_Begins",
-        "projectPath": "D:\\_github\\GDaD-103\\Raylib_Begins\\Raylib_Begins.csproj",
-        "packagesPath": "C:\\Users\\Darry\\.nuget\\packages\\",
-        "outputPath": "D:\\_github\\GDaD-103\\Raylib_Begins\\obj\\",
+        "projectPath": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj",
+        "packagesPath": "C:\\Users\\Darryl\\.nuget\\packages\\",
+        "outputPath": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Darry\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Darryl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

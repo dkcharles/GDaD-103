@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "o6tqCJF1C08=",
+  "dgSpecHash": "x3S+Mu0T/EE=",
   "success": true,
-  "projectFilePath": "D:\\_github\\GDaD-103\\Raylib_Begins\\Raylib_Begins.csproj",
+  "projectFilePath": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Darry\\.nuget\\packages\\raylib-cs\\6.1.1\\raylib-cs.6.1.1.nupkg.sha512",
-    "C:\\Users\\Darry\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Darryl\\.nuget\\packages\\raylib-cs\\6.1.1\\raylib-cs.6.1.1.nupkg.sha512",
+    "C:\\Users\\Darryl\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
