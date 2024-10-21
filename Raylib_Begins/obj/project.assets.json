@@ -131,6 +131,7 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj",
       "projectName": "Raylib_Begins",
       "projectPath": "E:\\Ulster University\\Game Design & Development - Module Information\\1st-Yr-Modules\\Yr1-S1\\CRE132\\Class_Material\\2024-25\\Practicals\\_Class_Code\\Raylib_Begins\\Raylib_Begins.csproj",
@@ -139,6 +140,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Darryl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\_Github\\Teaching\\GDaD-103\\Raylib_Begins\\Raylib_Begins.csproj",
+      "projectName": "Raylib_Begins",
+      "projectPath": "C:\\_Github\\Teaching\\GDaD-103\\Raylib_Begins\\Raylib_Begins.csproj",
+      "packagesPath": "C:\\Users\\Darry\\.nuget\\packages\\",
+      "outputPath": "C:\\_Github\\Teaching\\GDaD-103\\Raylib_Begins\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Darry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 50ee0bca405aeac401898b151231a4fc50b8d236
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -185,6 +196,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.33, 6.0.33]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.33, 6.0.33]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.33, 6.0.33]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.33, 6.0.33]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
